@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Diaper Inventory</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="apple-touch-icon" href="images/claire-iphone-icon.png"/>
+</head>
+<body>
+    <div class="navi">
+        <ul>
+          <li><a href="../diapers">Diaper Inventory</a></li>
+          <li><a href="../weight">Weight</a></li>
+        </ul>
+    </div>
+    <div class="table-data">
+<h2>Diaper Inventory</h2>
+    <table border="1">
+        <tr>
+            <th>Type</th>
+            <th>Age</th>
+            <th>Weight</th>
+            <th>Quantity</th>
+            <th>Use Diaper</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.size; %></td>
+            <td><%=data.name %></td>
+            <td><%=data.weight %></td>
+            <td><%=data.quantity %></td>
+            <td><a href='../use-diaper/<%=data.id %>'>Use Diaper</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="6">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
