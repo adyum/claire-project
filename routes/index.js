@@ -31,4 +31,20 @@ router.get('/weight', function(req, res, next) {
   });
 });
 
+router.get('/add-weight', function(req, res, next) {
+  res.render('add-weight', {title: 'Add new weight'});
+});
+
+router.post('/add-weight', function(req, res, next) {
+  var date = req.body.date;
+  var pounds = req.body.pounds;
+  var ounces = req.body.ounces;
+  var sql = `INSERT INTO weight (date, pounds, ounces) VALUES ("${date}", "${pounds}", "${ounces}")`;
+  db.query(sql, function(err, result) {
+    if (err) throw err;
+    console.log('record inserted');
+    res.redirect('/weight');
+});
+});
+
 module.exports = router;

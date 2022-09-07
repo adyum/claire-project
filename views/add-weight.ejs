@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Add Weight</title>
+</head>
+<body>
+  <%- include('includes/navigation'); %>
+  <div class="content">
+    <form method="post" action="add-weight" name="weight-entry" id="weight-entry">
+        <p>
+            <label for="date">Weight Date:</label>
+            <input type="date" name="date" />
+        </p>
+        <p>
+            <label for="pounds">Pounds:</label>
+            <input type="number" name="pounds" />
+        </p>
+        <p>
+            <label for="ounces">Ounces:</label>
+            <input type="number" name="ounces" />
+        </p>
+        <button type="submit">Submit Weight</button>
+    </form>
+  </div>
+</body>
+</html>
