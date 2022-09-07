@@ -15,7 +15,6 @@
             <th>Age</th>
             <th>Weight</th>
             <th>Quantity</th>
-            <th>Use Diaper</th>
         </tr>
         
         <%
@@ -28,7 +27,6 @@
             <td><%=data.name %></td>
             <td><%=data.weight %></td>
             <td><%=data.quantity %></td>
-            <td><a href='../use-diaper/<%=data.id %>'>Use Diaper</a></td>
         </tr>
         <%  i++; }) %>
         <% } else{ %>
@@ -37,6 +35,30 @@
             </tr>
         <% } %>
     </table>
+    <h2>Use a Diaper</h2>
+<div class="use-diaper"> 
+    <form method="post" action="use-diaper" name="use-diaper" id="use-diaper">
+        <p>
+            <label for="size">Diaper Size:</label>
+            <select id="size" name="size">
+                <option value="0">Newborn</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </p>
+        <p>
+            <label for="pee">Pee?</label>
+            <input type="checkbox" name="pee" id="pee" value="yes" />
+        </p>
+        <p>
+            <label for="ounces">Poop?</label>
+            <input type="checkbox" name="poop" id="poop" value="yes" />
+        </p>
+        <button type="submit">Submit Diaper Change</button>
+    </form>
+</div>
     </div>
 </body>
 </html>
