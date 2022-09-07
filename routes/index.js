@@ -60,7 +60,6 @@ router.post('/use-diaper', function(req, res, next) {
   var pee = req.body.pee;
   var poop = req.body.poop;
   var size = req.body.size;
-  console.log(datetime);
   var sql = `INSERT INTO diaper_change_log (date, pee, poop, diaper_size) VALUES ("${datetime}", "${pee}", "${poop}", "${size}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
