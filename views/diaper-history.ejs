@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Weight Chart</title>
+  <title>Diaper History</title>
   <link rel="stylesheet" href="stylesheets/style.css">
   <link rel="apple-touch-icon" href="images/claire-iphone-icon.png"/>
 </head>
 <body>
     <%- include('includes/navigation'); %>
     <div class="table-data">
-<h2>Claire's Weight Chart</h2>
+<h2>Claire's Diaper History</h2>
     <table border="1">
         <tr>
             <th>Date</th>
-            <th>Pounds</th>
-            <th>Ounces</th>
+            <th>Pee</th>
+            <th>Poop</th>
+            <th>Diaper Size</th>
         </tr>
         
         <%
@@ -23,8 +24,9 @@
         %>
         <tr>
             <td><%=data.date; %></td>
-            <td><%=data.pounds %></td>
-            <td><%=data.ounces %></td>
+            <td><%=data.pee %></td>
+            <td><%=data.poop %></td>
+            <td><%=data.diaper_size %></td>
         </tr>
         <%  i++; }) %>
         <% } else{ %>
