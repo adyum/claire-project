@@ -2,6 +2,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: auto;
   margin: auto;
+  background-color: #A3C4BC;
+  color: #232C33;
 }
 
 ul {
@@ -9,7 +11,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #38444d;
+  background-color: #232C33;
 }
 
 li {
@@ -18,14 +20,14 @@ li {
 
 li a, .dropbtn {
   display: inline-block;
-  color: white;
+  color: #F4B393;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #94849B;
 }
 
 li.dropdown {
@@ -68,27 +70,7 @@ table {
 }
 
 a {
-  color: #000;
-}
-
-.keeper-yes{
-  background-color: #fff000;
-}
-
-.TE{
-  background-color: #f9cb9c;
-}
-
-.RB{
-  background-color: #a4c2f4;
-}
-
-.WR{
-  background-color: #b6d7a8;
-}
-
-.QB{
-  background-color: #d5a6bd;
+  color: #F4B393;
 }
 
 .content{
@@ -103,28 +85,8 @@ a {
   margin-right: auto;
 }
 
-.player{
-  font-size: 20px;
-  background-color: #38444d;
-  color: white;
-  margin-top: 20px;
-}
-
-.blurb{
-  font-size: 14px;
-  margin-bottom: 20px;
-}
 
 .footer{
-  background-color: #38444d;
-  color: white;
+  background-color: #232C33;
   padding: 14px 16px;
-}
-
-.power-rankings{
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
