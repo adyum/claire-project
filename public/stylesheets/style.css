@@ -34,16 +34,6 @@ li a:hover, .dropdown:hover .dropbtn {
 
 /* spacing */
 
-table {
-  table-layout: auto;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: collapse;
-  border: 3px solid black;
-  font-size: 20px;
-}
-
 a {
   color: #F4B393;
 }
@@ -64,6 +54,16 @@ a {
 .footer{
   background-color: #232C33;
   padding: 14px 16px;
+}
+
+table {
+  table-layout: auto;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border: 3px solid black;
+  font-size: 20px;
 }
 
 th{
