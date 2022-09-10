@@ -56,11 +56,11 @@ router.post('/add-weight', function(req, res, next) {
 });
 
 router.post('/use-diaper', function(req, res, next) {
-  const datetime = new Date().toJSON().slice(0, 19).replace('T', ' ')
+  var dateTime = (new Date ((new Date((new Date(new Date())).toISOString() )).getTime() - ((new Date()).getTimezoneOffset()*60000))).toISOString().slice(0, 19).replace('T', ' ');
   var pee = req.body.pee;
   var poop = req.body.poop;
   var size = req.body.size;
-  var sql = `INSERT INTO diaper_change_log (date, pee, poop, diaper_size) VALUES ("${datetime}", "${pee}", "${poop}", "${size}")`;
+  var sql = `INSERT INTO diaper_change_log (date, pee, poop, diaper_size) VALUES ("${dateTime}", "${pee}", "${poop}", "${size}")`;
   db.query(sql, function(err, result) {
     if (err) throw err;
     console.log('record inserted');
