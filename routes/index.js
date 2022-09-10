@@ -36,7 +36,7 @@ router.get('/add-weight', function(req, res, next) {
 });
 
 router.get('/diaper-history', function(req, res, next) {
-  var sql='SELECT * from diaper_change_log';
+  var sql='SELECT * from diaper_change_log ORDER BY id DESC';
   db.query(sql,function (err, data, fields){
     if (err) throw err;
     res.render('diaper-history', {title: 'Claire Diaper', userData: data});
