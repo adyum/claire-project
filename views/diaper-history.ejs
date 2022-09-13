@@ -12,33 +12,32 @@
     <%- include('includes/navigation'); %>
     <div class="table-data">
 <h2>Claire's Diaper History</h2>
-    <div class="table">
-        <div class="row">
-            <div class="cell title middle center">Date</div>
-            <div class="cell title middle center">Pee</div>
-            <div class="cell title middle center">Poop</div>
-            <div class="cell title middle center">Diaper Size</div>
-        </div>
-
-        <%
-        if(userData.length!=0){
-        var i=1;
-        userData.forEach(function(data){
-        %>
-
-        <div class="row">
-            <div class="cell data top center"><%=data.date; %></div>
-            <div class="cell data top center"><%=data.pee %></div>
-            <div class="cell data top center"><%=data.poop %></div>
-            <div class="cell data top center"><%=data.diaper_size %></div>
-        </div>
-        <%  i++; }) %>
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Pee</th>
+        <th>Poop</th>
+        <th>Diaper Size</th>
+    </tr>
+    
+    <%
+    if(userData.length!=0){
+    var i=1;
+    userData.forEach(function(data){
+    %>
+    <tr>
+        <td><%=data.date; %></td>
+        <td><%=data.pee %></td>
+        <td><%=data.poop %></td>
+        <td><%=data.diaper_size %></td>
+    </tr>
+    <%  i++; }) %>
     <% } else{ %>
         <tr>
             <td colspan="6">No Data Found</td>
         </tr>
     <% } %>
-    </div>
+</table>
     </div>
 </body>
 </html>
