@@ -1,38 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: auto;
-  margin: auto;
   background-color: #A3C4BC;
   color: #232C33;
 }
 
-ul {
-  list-style-type: none;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #232C33;
-}
-
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: #efefef;
-  text-align: center;
-  padding: 14px 16px;
+header a {
   text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: #BFD7B5;
-  color: #232C33;
+header {
+  padding: 0 20px;
+  background-color: #232C33;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
-/* spacing */
+#brand {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+#brand a {
+  color: #efefef;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: #efefef;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: none;
+  position: absolute;
+  background-color: #232C33;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+  }
+}
 
 a {
   color: #F4B393;
@@ -73,4 +154,8 @@ th{
 
 tr{
   background-color: #BFD7B5;
+}
+
+h2{
+  padding: 5px 5px 5px 5px;
 }
