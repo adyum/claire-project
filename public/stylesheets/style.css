@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #A3C4BC;
@@ -14,8 +20,6 @@ header {
   height: 50px;
   display: flex;
   justify-content: space-between;
-  margin: 0;
-  box-sizing: border-box;
 }
 
 #brand {
