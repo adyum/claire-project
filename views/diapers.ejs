@@ -21,22 +21,30 @@
         </tr>
         
         <%
-        if(userData.length!=0){
         var i=1;
         userData.forEach(function(data){
+            if(data.quantity <= 20)
+            {
         %>
-        <tr>
+        <tr class="warning">
             <td><%=data.size; %></td>
             <td><%=data.name %></td>
             <td><%=data.weight %></td>
             <td><%=data.quantity %></td>
         </tr>
-        <%  i++; }) %>
-        <% } else{ %>
+        <%  i++; }
+        else{
+            %>
             <tr>
-                <td colspan="6">No Data Found</td>
-            </tr>
-        <% } %>
+            <td><%=data.size; %></td>
+            <td><%=data.name %></td>
+            <td><%=data.weight %></td>
+            <td><%=data.quantity %></td>
+        </tr>
+        <% 
+        }
+    });
+        %>
     </table>
     <h2>Use a Diaper</h2>
 <div class="use-diaper"> 

@@ -159,6 +159,10 @@ h2{
   padding: 5px 5px 5px 5px;
 }
 
+.warning{
+  background-color: yellow;
+}
+
 
 @media 
 only screen and (max-width: 760px),
