@@ -11,6 +11,44 @@
 <body>
     <%- include('includes/navigation'); %>
     <div class="table-data">
+    <h2>Milk Pump</h2>
+    <div class="use-diaper"> 
+        <form method="post" action="post-milk" name="post-milk" id="post-milk">
+            <p>
+                <label for="ounces">Ounces Pumped:</label>
+                <input type="number" id="onces" name="ounces">
+            </p>
+            <p>
+                <label for="timeframe">Timeframe:</label>
+                <select id="timeframe" name="timeframe">
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                    <option value="night">Night</option>
+                </select>
+            </p>
+            <p>
+                <label for="vessel">Locale:</label>
+                <select id="vessel" name="vessel">
+                    <option value="bottle">Bottle</option>
+                    <option value="bag">Bag</option>
+                </select>
+            </p>
+            <p>
+                <label for="device">Pump:</label>
+                <select id="device" name="device">
+                    <option value="hand">Hand Pump</option>
+                    <option value="electric">Electric Pump</option>
+                </select>
+            </p>
+            <p>
+                <label for="notes">Notes:</label>
+                <input type="text" id="notes" name="notes">
+            </p>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
 <h2>Claire's Milk Inventory</h2>
     <table border="1">
         <tr>
@@ -38,43 +76,6 @@
     });
         %>
     </table>
-    <h2>Milk Pump</h2>
-<div class="use-diaper"> 
-    <form method="post" action="post-milk" name="post-milk" id="post-milk">
-        <p>
-            <label for="ounces">Ounces Pumped:</label>
-            <input type="number" id="onces" name="ounces">
-        </p>
-        <p>
-            <label for="timeframe">Timeframe:</label>
-            <select id="timeframe" name="timeframe">
-                <option value="morning">Morning</option>
-                <option value="afternoon">Afternoon</option>
-                <option value="evening">Evening</option>
-                <option value="night">Night</option>
-            </select>
-        </p>
-        <p>
-            <label for="vessel">Locale:</label>
-            <select id="vessel" name="vessel">
-                <option value="bottle">Bottle</option>
-                <option value="bag">Bag</option>
-            </select>
-        </p>
-        <p>
-            <label for="device">Pump:</label>
-            <select id="device" name="device">
-                <option value="hand">Hand Pump</option>
-                <option value="electric">Electric Pump</option>
-            </select>
-        </p>
-        <p>
-            <label for="notes">Notes:</label>
-            <input type="text" id="notes" name="notes">
-        </p>
-        <button type="submit">Submit</button>
-    </form>
-</div>
     </div>
 </body>
 </html>

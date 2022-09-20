@@ -69,7 +69,7 @@ router.post('/use-diaper', function(req, res, next) {
 });
 
 router.get('/milk', function(req, res, next) {
-  var sql='SELECT * from milk_log';
+  var sql='SELECT * from milk_log ORDER BY id DESC';
   db.query(sql,function (err, data, fields){
     if (err) throw err;
     res.render('milk', {title: 'Milk Inventory', userData: data});
