@@ -92,5 +92,17 @@ router.post('/post-milk', function(req, res, next) {
   })
 });
 
+router.post('/adjust-inventory', function(req, res, next) {
+  var addRemove = req.body.addRemove;
+  var quantity = req.body.quantity;
+  var size = req.body.size;
+  var sql = `UPDATE diaper SET quantity=quantity${addRemove}${quantity} where id=${size}`;
+  db.query(sql, function(err, result) {
+    if (err) throw err;
+    console.log('record inserted');
+    res.redirect(`/diapers`);
+  })
+});
+
 
 module.exports = router;

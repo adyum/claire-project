@@ -77,6 +77,33 @@
         <button type="submit">Submit</button>
     </form>
 </div>
-    </div>
+<h2>Change Diaper Quantity</h2>
+    <div class="update-quantity">
+        <form method="post" action="adjust-inventory" name="adjust-inventory" id="adjust-inventory">
+            <p>
+            <label for="size">Diaper Size:</label>
+            <select id="size" name="size">
+                <option value="0">Newborn</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            </p>
+            <p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity">
+            </p>
+            <p>
+                <label for="addRemove">Add or Remove</label>
+                <select id="addRemove" name="addRemove">
+                    <option value="+">Add</option>
+                    <option value="-">Remove</option>
+                </select>
+            </p>
+            <button type="submit">Submit</button>
+        </form>
+    </div> 
+</div>
 </body>
 </html>
