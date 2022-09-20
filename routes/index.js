@@ -68,4 +68,29 @@ router.post('/use-diaper', function(req, res, next) {
   });
 });
 
+router.get('/milk', function(req, res, next) {
+  var sql='SELECT * from milk_log';
+  db.query(sql,function (err, data, fields){
+    if (err) throw err;
+    res.render('milk', {title: 'Milk Inventory', userData: data});
+  });
+});
+
+
+router.post('/post-milk', function(req, res, next) {
+  var dateYear = new Date().toJSON().slice(0,10);
+  var ounces = req.body.ounces;
+  var timeframe = req.body.timeframe;
+  var vessel = req.body.vessel;
+  var device = req.body.device;
+  var notes = req.body.notes;
+  var sql = `INSERT INTO milk_log (amount, date, timeframe, vessel, device, notes) VALUES ("${ounces}", "${dateYear}", "${timeframe}", "${vessel}", "${device}", "${notes}")`;
+  db.query(sql, function(err, result) {
+    if (err) throw err;
+    console.log('record inserted');
+    res.redirect(`/milk`);
+  })
+});
+
+
 module.exports = router;
