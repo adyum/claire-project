@@ -1,13 +1,16 @@
-const mysql = require('mysql');
-const pool = mysql.createPool({
-    host: "143.95.32.203",
-    user: "cranford_claires",
-    password: "bGEg5p41!",
-    database: "cranford_claire"
+var mysql = require('mysql');
+const dotenv = require('dotenv').config();
+
+var pool  = mysql.createPool({
+  host: process.env.db_host,
+  user: process.env.db_user,
+  password: process.env.db_password,
+  database: process.env.db_database
 });
 
 pool.getConnection(function(err, connection) {
-    connection.release();
+  // connected! (unless `err` is set)
+  connection.release();
 });
 
 module.exports = pool;
