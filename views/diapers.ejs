@@ -1,109 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diaper Inventory</title>
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <link rel="apple-touch-icon" href="images/claire-iphone-icon.png"/>
-  <link rel="icon" type="image/png" href="images/claire-iphone-icon.png"/>
+    <title>Diaper Inventory</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="apple-touch-icon" href="images/claire-iphone-icon.png" />
+    <link rel="icon" type="image/png" href="images/claire-iphone-icon.png" />
 </head>
+
 <body>
     <%- include('includes/navigation'); %>
-    <div class="table-data">
-<h2>Claire's Diaper Inventory</h2>
-    <table border="1">
-        <tr>
-            <th>Type</th>
-            <th>Aprox. Age</th>
-            <th>Weight</th>
-            <th>Quantity</th>
-        </tr>
-        
-        <%
-        var i=1;
-        userData.forEach(function(data){
-            if(data.quantity <= 20)
-            {
-        %>
-        <tr class="warning">
-            <td><%=data.size; %></td>
-            <td><%=data.name %></td>
-            <td><%=data.weight %></td>
-            <td><%=data.quantity %></td>
-        </tr>
-        <%  i++; }
-        else{
-            %>
-            <tr>
-            <td><%=data.size; %></td>
-            <td><%=data.name %></td>
-            <td><%=data.weight %></td>
-            <td><%=data.quantity %></td>
-        </tr>
-        <% 
-        }
-    });
-        %>
-    </table>
-    <h2>Use a Diaper</h2>
-<div class="use-diaper"> 
-    <form method="post" action="use-diaper" name="use-diaper" id="use-diaper">
-        <p>
-            <label for="size">Diaper Size:</label>
-            <select id="size" name="size">
-                <option value="0">Newborn</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-        </p>
-        <p>
-            <label for="pee">Pee:</label>
-            <select id="pee" name="pee">
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-            </select>
-        </p>
-        <p>
-            <label for="poop">Poop:</label>
-            <select id="poop" name="poop">
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-            </select>
-        </p>
-        <button type="submit">Submit</button>
-    </form>
-</div>
-<h2>Change Diaper Quantity</h2>
-    <div class="update-quantity">
-        <form method="post" action="adjust-inventory" name="adjust-inventory" id="adjust-inventory">
-            <p>
-            <label for="size">Diaper Size:</label>
-            <select id="size" name="size">
-                <option value="0">Newborn</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-            </p>
-            <p>
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity">
-            </p>
-            <p>
-                <label for="addRemove">Add or Remove</label>
-                <select id="addRemove" name="addRemove">
-                    <option value="+">Add</option>
-                    <option value="-">Remove</option>
-                </select>
-            </p>
-            <button type="submit">Submit</button>
-        </form>
-    </div> 
-</div>
+        <div class="table-data">
+            <h2>Claire's Diaper Inventory</h2>
+            <table border="1">
+                <tr>
+                    <th>Type</th>
+                    <th>Aprox. Age</th>
+                    <th>Weight</th>
+                    <th>Quantity</th>
+                </tr>
+
+                <% var i=1; userData.forEach(function(data){ if(data.quantity <=50) { %>
+                    <tr class="warning">
+                        <td>
+                            <%=data.size; %>
+                        </td>
+                        <td>
+                            <%=data.name %>
+                        </td>
+                        <td>
+                            <%=data.weight %>
+                        </td>
+                        <td>
+                            <%=data.quantity %>
+                        </td>
+                    </tr>
+                    <% i++; } else{ %>
+                        <tr>
+                            <td>
+                                <%=data.size; %>
+                            </td>
+                            <td>
+                                <%=data.name %>
+                            </td>
+                            <td>
+                                <%=data.weight %>
+                            </td>
+                            <td>
+                                <%=data.quantity %>
+                            </td>
+                        </tr>
+                        <% } }); %>
+            </table>
+            <h2>Use a Diaper</h2>
+            <div class="use-diaper">
+                <form method="post" action="use-diaper" name="use-diaper" id="use-diaper">
+                    <p>
+                        <label for="size">Diaper Size:</label>
+                        <select id="size" name="size">
+                            <option value="0">Newborn</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="pee">Pee:</label>
+                        <select id="pee" name="pee">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="poop">Poop:</label>
+                        <select id="poop" name="poop">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <h2>Change Diaper Quantity</h2>
+            <div class="update-quantity">
+                <form method="post" action="adjust-inventory" name="adjust-inventory" id="adjust-inventory">
+                    <p>
+                        <label for="size">Diaper Size:</label>
+                        <select id="size" name="size">
+                            <option value="0">Newborn</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity">
+                    </p>
+                    <p>
+                        <label for="addRemove">Add or Remove</label>
+                        <select id="addRemove" name="addRemove">
+                            <option value="+">Add</option>
+                            <option value="-">Remove</option>
+                        </select>
+                    </p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
 </body>
+
 </html>
