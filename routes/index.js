@@ -64,7 +64,12 @@ router.post('/use-diaper', function (req, res, next) {
   db.query(sql, function (err, result) {
     if (err) throw err;
     console.log('record inserted');
-    res.redirect(`/use-diaper/${size}`);
+    if (size != "cloth") {
+      res.redirect(`/use-diaper/${size}`);
+    }
+    else {
+      res.redirect('/diapers');
+    }
   });
 });
 
