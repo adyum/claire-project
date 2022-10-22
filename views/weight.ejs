@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weight Chart</title>
     <link rel="stylesheet" href="stylesheets/style.css">
-    <link rel="apple-touch-icon" href="images/claire-iphone-icon.png"/>
-    <link rel="icon" type="image/png" href="images/claire-iphone-icon.png"/>
+    <link rel="apple-touch-icon" href="images/claire-iphone-icon.png" />
+    <link rel="icon" type="image/png" href="images/claire-iphone-icon.png" />
 </head>
+
 <body>
     <%- include('includes/navigation'); %>
-    <div class="table-data">
-<h2>Claire's Weight Chart</h2>
-    <table border="1">
-        <tr>
-            <th>Date</th>
-            <th>Pounds</th>
-            <th>Ounces</th>
-        </tr>
-        
-        <%
-        if(userData.length!=0){
-        var i=1;
-        userData.forEach(function(data){
-        %>
-        <tr>
-            <td><%=data.date; %></td>
-            <td><%=data.pounds %></td>
-            <td><%=data.ounces %></td>
-        </tr>
-        <%  i++; }) %>
-        <% } else{ %>
-            <tr>
-                <td colspan="6">No Data Found</td>
-            </tr>
-        <% } %>
-    </table>
-    </div>
+        <div class="table-data">
+            <h2>Enter Weight:</h2>
+            <form method="post" action="add-weight" name="weight-entry" id="weight-entry">
+                <p>
+                    <label for="date">Weight Date:</label>
+                    <input type="date" name="date" />
+                </p>
+                <p>
+                    <label for="pounds">Pounds:</label>
+                    <input type="number" name="pounds" />
+                </p>
+                <p>
+                    <label for="ounces">Ounces:</label>
+                    <input type="number" name="ounces" />
+                </p>
+                <button type="submit">Submit Weight</button>
+            </form>
+            <h2>Claire's Weight Chart</h2>
+            <table border="1">
+                <tr>
+                    <th>Date</th>
+                    <th>Pounds</th>
+                    <th>Ounces</th>
+                </tr>
+
+                <% if(userData.length!=0){ var i=1; userData.forEach(function(data){ %>
+                    <tr>
+                        <td>
+                            <%=data.date; %>
+                        </td>
+                        <td>
+                            <%=data.pounds %>
+                        </td>
+                        <td>
+                            <%=data.ounces %>
+                        </td>
+                    </tr>
+                    <% i++; }) %>
+                        <% } else{ %>
+                            <tr>
+                                <td colspan="6">No Data Found</td>
+                            </tr>
+                            <% } %>
+            </table>
+        </div>
 </body>
+
 </html>
