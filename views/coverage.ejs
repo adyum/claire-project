@@ -27,16 +27,19 @@
                 <% var i=1; userData.forEach(function(data){ %>
                     <tr>
                         <td>
-                            <%=data.size; %>
+                            <%=data.date; %>
                         </td>
                         <td>
                             <%=data.name %>
                         </td>
                         <td>
-                            <%=data.weight %>
+                            <%=data.hour %>
                         </td>
                         <td>
-                            <%=data.quantity %>
+                            <%=data.cost %>
+                        </td>
+                        <td>
+                            <%=data.notes %>
                         </td>
                     </tr>
                     <% i++; });%>
