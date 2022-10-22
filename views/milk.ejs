@@ -16,9 +16,6 @@
         <%- include('includes/navigation'); %>
             <div class="table-data">
                 <h2>Milk Pump</h2>
-                <div>
-                    <h1>Total Milk: <%=totalMilk %> oz</h1>
-                </div>
                 <div class="use-diaper">
                     <form method="post" action="post-milk" name="post-milk" id="post-milk">
                         <p>
@@ -80,6 +77,9 @@
                         </tr>
                         <% totalMilk=totalMilk + data.amount; }); %>
                 </table>
+                <div>
+                    <h1>Total Milk: <%=totalMilk %> oz</h1>
+                </div>
             </div>
 </body>
 
