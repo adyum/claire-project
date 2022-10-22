@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coverage</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="apple-touch-icon" href="images/claire-iphone-icon.png" />
+    <link rel="icon" type="image/png" href="images/claire-iphone-icon.png" />
+</head>
+
+<body>
+    <%- include('includes/navigation'); %>
+        <div class="table-data">
+            <h2>Claire's Coverage</h2>
+            <table border="1">
+                <tr>
+                    <th>Date</th>
+                    <th>Watcher</th>
+                    <th>Hours</th>
+                    <th>Cost</th>
+                    <th>Notes</th>
+                </tr>
+
+                <% var i=1; userData.forEach(function(data){ %>
+                    <tr>
+                        <td>
+                            <%=data.size; %>
+                        </td>
+                        <td>
+                            <%=data.name %>
+                        </td>
+                        <td>
+                            <%=data.weight %>
+                        </td>
+                        <td>
+                            <%=data.quantity %>
+                        </td>
+                    </tr>
+                    <% i++; });%>
+            </table>
+            <h2>Add Coverage</h2>
+            <div class="use-diaper">
+                <form method="post" action="add-coverage" name="coverage-entry" id="coverage-entry">
+                    <p>
+                        <label for="date">Date:</label>
+                        <input type="date" name="date" />
+                    </p>
+                    <p>
+                        <label for="coverage">Coverage:</label>
+                        <select id="coverage" name="coverage">
+                            <option value="roy">Mr. Beller</option>
+                            <option value="maggie">Maggie</option>
+                            <option value="daycare">Daycare</option>
+                            <option value="babysitter">Babysitter</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="length">Length:</label>
+                        <input type="number" name="length" />
+                    </p>
+                    <p>
+                        <label for="notes">Notes:</label>
+                        <input type="text" name="notes" />
+                    </p>
+                    <button type="submit">Submit Coverage</button>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>

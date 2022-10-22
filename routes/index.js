@@ -110,5 +110,12 @@ router.post('/adjust-inventory', function (req, res, next) {
   })
 });
 
+router.get('/coverage', function (req, res, next) {
+  var sql = 'SELECT * from coverage ORDER BY id DESC';
+  db.query(sql, function (err, data, fields) {
+    if (err) throw err;
+    res.render('coverage', { title: 'Claire Coverage', userData: data });
+  });
+});
 
 module.exports = router;
