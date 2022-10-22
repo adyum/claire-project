@@ -28,6 +28,10 @@
                     <label for="ounces">Ounces:</label>
                     <input type="number" name="ounces" />
                 </p>
+                <p>
+                    <label for="inches">Inches:</label>
+                    <input type="number" name="inches">
+                </p>
                 <button type="submit">Submit Weight</button>
             </form>
             <h2>Claire's Weight Chart</h2>
@@ -36,6 +40,7 @@
                     <th>Date</th>
                     <th>Pounds</th>
                     <th>Ounces</th>
+                    <th>Inches</th>
                 </tr>
 
                 <% if(userData.length!=0){ var i=1; userData.forEach(function(data){ %>
@@ -48,6 +53,9 @@
                         </td>
                         <td>
                             <%=data.ounces %>
+                        </td>
+                        <td>
+                            <%=data.inches %>
                         </td>
                     </tr>
                     <% i++; }) %>

@@ -47,7 +47,8 @@ router.post('/add-weight', function (req, res, next) {
   var date = req.body.date;
   var pounds = req.body.pounds;
   var ounces = req.body.ounces;
-  var sql = `INSERT INTO weight (date, pounds, ounces) VALUES ("${date}", "${pounds}", "${ounces}")`;
+  var inches = req.body.inches;
+  var sql = `INSERT INTO weight (date, pounds, ounces) VALUES ("${date}", "${pounds}", "${ounces}", "${inches})`;
   db.query(sql, function (err, result) {
     if (err) throw err;
     console.log('record inserted');
