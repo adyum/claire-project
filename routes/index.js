@@ -119,10 +119,10 @@ router.get('/coverage', function (req, res, next) {
 });
 
 router.get('/solids', function (req, res, next) {
-  var sql = 'SELECT * from baby_lead ORDER BY id DESC';
+  var sql = 'SELECT * from baby_lead ORDER BY date DESC';
   db.query(sql, function (err, data, fields) {
     if (err) throw err;
-    res.render('solids', { title: 'Baby Lead Weening', userData: data });
+    res.render('solids', { title: 'Baby Led Weaning', userData: data });
   });
 });
 
