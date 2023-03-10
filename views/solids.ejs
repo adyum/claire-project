@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Lead Weening</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="apple-touch-icon" href="images/claire-iphone-icon.png" />
+    <link rel="icon" type="image/png" href="images/claire-iphone-icon.png" />
+</head>
+
+<body>
+    <%- include('includes/navigation'); %>
+        <div class="table-data">
+            <h2>BLW</h2>
+            <div class="use-diaper">
+                <form method="post" action="post-food" name="post-food" id="post-food">
+                    <p>
+                        <label for="date">Date:</label>
+                        <input type="date" name="date" />
+                    </p>
+                    <p>
+                        <label for="timeframe">Timeframe:</label>
+                        <select id="timeframe" name="timeframe">
+                            <option value="morning">Morning</option>
+                            <option value="snack">Snack</option>
+                            <option value="noon">Noon</option>
+                            <option value="afternoon">Afternoon</option>
+                            <option value="evening">Evening</option>
+                            <option value="night">Night</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="form">Form:</label>
+                        <select id="form" name="form">
+                            <option value="puree">Puree</option>
+                            <option value="solids">Solids</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="food_type">Food Type:</label>
+                        <input type="text" id="food_type" name="food_type">
+                    </p>
+                    <p>
+                        <label for="notes">Notes:</label>
+                        <input type="text" id="notes" name="notes">
+                    </p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <h2>Claire's Milk Inventory</h2>
+            <table border="1">
+                <tr>
+                    <th>Date</th>
+                    <th>Timeframe</th>
+                    <th>Form</th>
+                    <th>Food Type</th>
+                    <th>Notes</th>
+                </tr>
+
+                <% var i=1; userData.forEach(function(data){ %>
+                    <tr>
+                        <td>
+                            <%=data.date; %>
+                        </td>
+                        <td>
+                            <%=data.timeframe %>
+                        </td>
+                        <td>
+                            <%=data.form %>
+                        </td>
+                        <td>
+                            <%=data.food_type %>
+                        </td>
+                        <td>
+                            <%=data.notes %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </table>
+        </div>
+</body>
+
+</html>

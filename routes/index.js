@@ -118,4 +118,26 @@ router.get('/coverage', function (req, res, next) {
   });
 });
 
+router.get('/solids', function (req, res, next) {
+  var sql = 'SELECT * from baby_lead ORDER BY id DESC';
+  db.query(sql, function (err, data, fields) {
+    if (err) throw err;
+    res.render('solids', { title: 'Baby Lead Weening', userData: data });
+  });
+});
+
+router.post('/post-food', function (req, res, next) {
+  var date = req.body.date;
+  var timeframe = req.body.timeframe;
+  var form = req.body.form;
+  var food_type = req.body.food_type;
+  var notes = req.body.notes;
+  var sql = `INSERT INTO baby_lead (date, timeframe, form, food_type, notes) VALUES ("${date}", "${timeframe}", "${form}", "${food_type}", "${notes}")`;
+  db.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log('record inserted');
+    res.redirect('/solids');
+  });
+});
+
 module.exports = router;
